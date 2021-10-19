@@ -1,7 +1,7 @@
 template: external-service
 values:
   publicFQDN: azure-east-rg-demo-rema9-f75f63-387b209a.hcp.eastus2.azmk8s.io
-  image: krakenapps.azurecr.io/renato-marciano/java-api-rema9:<TAG>
+  image: krakenapps.azurecr.io/renato-marciano/java-api-rema9:main 
   app: java-api-rema9
   cpu: 1
   memory: 256M
