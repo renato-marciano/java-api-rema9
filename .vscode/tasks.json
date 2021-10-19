@@ -1,0 +1,90 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {            
+      "label": "Build",
+      "type": "shell",
+      "command": "mvnw compile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {            
+      "label": "Run",
+      "type": "shell",
+      "command": "mvnw spring-boot:run",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test",
+      "type": "shell",
+      "command": "mvnw -B test",
+      "group": {
+          "kind": "test",
+          "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run in local cluster",
+      "type": "shell",
+      "command": ".devcontainer/scripts/cluster-runApp.sh",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Reset local cluster",
+      "type": "shell",
+      "command": ".devcontainer/scripts/cluster-reset.sh",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Enable k8s development",
+      "type": "shell",
+      "command": ".devcontainer/scripts/codespace-enableK8s.sh",
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Launch App in New Tab",
+      "type": "shell",
+      "command": "$BROWSER 'https://${env:CODESPACE_NAME}-8081.githubpreview.dev/'",
+      "problemMatcher": [],
+    },
+    {
+      "label": "Launch Platform Portal in New Tab",
+      "type": "shell",
+      "command": "$BROWSER 'https://${env:CODESPACE_NAME}-8081.githubpreview.dev/.platform'",
+      "problemMatcher": [],
+    }
+  ]
+}
